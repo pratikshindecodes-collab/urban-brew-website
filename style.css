@@ -11,18 +11,11 @@
   --border: #eadfd6;
 
   --max-width: 1200px;
-
   --radius: 16px;
 
   --shadow: 0 15px 40px rgba(36, 27, 22, 0.08);
 
   --transition: 0.3s ease;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", serif;
 }
 
 /* =========================
@@ -42,8 +35,15 @@ html {
 body {
   font-family: "DM Sans", sans-serif;
   line-height: 1.6;
+
   color: var(--text);
   background: var(--background);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
 }
 
 img {
@@ -65,21 +65,25 @@ section {
 }
 
 /* =========================
-     NAVBAR
-  ========================= */
+   NAVBAR
+========================= */
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
+
   background: rgba(255, 250, 245, 0.92);
+
   backdrop-filter: blur(10px);
+
   border-bottom: 1px solid var(--border);
 }
 
 nav {
   max-width: var(--max-width);
   min-height: 76px;
+
   margin: auto;
   padding: 0 30px;
 
@@ -90,6 +94,7 @@ nav {
 
 .logo {
   font-family: "Playfair Display", serif;
+
   font-size: 1.6rem;
   font-weight: 700;
 
@@ -113,13 +118,14 @@ nav ul a {
 }
 
 nav ul a:hover {
-  opacity: 0.6;
+  color: var(--primary);
 }
 
 nav ul a::after {
   content: "";
 
   position: absolute;
+
   left: 0;
   bottom: -6px;
 
@@ -131,30 +137,62 @@ nav ul a::after {
   transition: var(--transition);
 }
 
-nav ul a:hover {
-  color: var(--primary);
-}
-
 nav ul a:hover::after {
   width: 100%;
 }
 
+/* Navbar CTA */
+
 nav > a:last-child {
-  padding: 10px 18px;
-  border-radius: 6px;
-  background: #222;
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 22px;
+
+  border-radius: 999px;
+
+  background: var(--primary);
   color: white;
+
+  font-weight: 600;
+
+  transition: var(--transition);
+}
+
+nav > a:last-child:hover {
+  background: var(--primary-dark);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(139, 94, 60, 0.25);
+}
+
+/* Mobile menu button */
+
+.menu-toggle {
+  display: none;
+
+  border: none;
+  background: transparent;
+
+  font-size: 1.8rem;
+
+  cursor: pointer;
+
+  color: var(--text);
 }
 
 /* =========================
-     BUTTONS
-  ========================= */
+   GENERAL BUTTONS
+========================= */
 
 #home a,
 #about a,
-#contact a,
-nav > a:last-child {
+#contact a {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -175,8 +213,7 @@ nav > a:last-child {
 
 #home a:hover,
 #about a:hover,
-#contact a:hover,
-nav > a:last-child:hover {
+#contact a:hover {
   background: var(--primary-dark);
 
   transform: translateY(-3px);
@@ -184,31 +221,23 @@ nav > a:last-child:hover {
   box-shadow: 0 10px 25px rgba(139, 94, 60, 0.25);
 }
 
-.menu-toggle {
-  display: none;
-
-  border: none;
-  background: transparent;
-
-  font-size: 1.8rem;
-  cursor: pointer;
-
-  color: var(--text);
-}
-
 /* =========================
-     HERO
-  ========================= */
+   HERO
+========================= */
 
 #home {
-  min-height: var(--max-width);
+  max-width: var(--max-width);
+
   min-height: 85vh;
 
   margin: auto;
 
   display: grid;
+
   grid-template-columns: 1.05fr 0.95fr;
+
   align-items: center;
+
   gap: 70px;
 }
 
@@ -222,17 +251,20 @@ nav > a:last-child:hover {
   border-radius: 999px;
 
   background: #f0e2d6;
+
   color: var(--primary);
 
   font-size: 0.78rem;
   font-weight: 700;
 
   text-transform: uppercase;
+
   letter-spacing: 1.5px;
 }
 
 #home h1 {
   max-width: 650px;
+
   margin: 10px 0 20px;
 
   font-size: clamp(3rem, 6vw, 5.5rem);
@@ -249,6 +281,8 @@ nav > a:last-child:hover {
 
   font-size: 1.05rem;
 }
+
+/* Hero image */
 
 #home > div:last-child {
   position: relative;
@@ -274,17 +308,27 @@ nav > a:last-child:hover {
 
 #home > div:last-child img {
   height: 560px;
+
   object-fit: cover;
+
   border-radius: 30px;
+
   box-shadow: var(--shadow);
+
   position: relative;
+
   z-index: 1;
 }
+
+/* =========================
+   SECTION HEADINGS
+========================= */
 
 section > div:first-child p {
   color: var(--primary);
 
   font-size: 0.8rem;
+
   font-weight: 700;
 
   text-transform: uppercase;
@@ -308,68 +352,73 @@ section > div:first-child p {
   letter-spacing: -1px;
 }
 
-
-
 /* =========================
-     ABOUT
-  ========================= */
+   ABOUT
+========================= */
 
 #about {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   align-items: center;
+
   gap: 70px;
+
   background: #f7f7f7;
 }
 
 #about img {
   height: 450px;
-  object-fit: cover;
-  border-radius: 16px;
-}
 
-#about h2,
-#menu h2,
-#why-us h2,
-#reviews h2,
-#contact h2 {
-  margin: 10px 0 20px;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
+  object-fit: cover;
+
+  border-radius: var(--radius);
 }
 
 /* =========================
-     MENU
-  ========================= */
+   MENU
+========================= */
 
 #menu > div:first-child {
   text-align: center;
+
   margin-bottom: 45px;
 }
 
 #menu > div:last-child {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 25px;
 }
 
 #menu article {
   overflow: hidden;
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius);
+
   background: var(--surface);
+
   box-shadow: 0 5px 20px rgba(36, 27, 22, 0.04);
+
   transition: var(--transition);
 }
 
 #menu article:hover {
   transform: translateY(-8px);
+
   box-shadow: var(--shadow);
 }
 
 #menu article img {
   height: 240px;
+
   object-fit: cover;
+
   transition: transform 0.5s ease;
 }
 
@@ -381,6 +430,7 @@ section > div:first-child p {
 #menu article p,
 #menu article strong {
   display: block;
+
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -391,27 +441,35 @@ section > div:first-child p {
 
 #menu article p {
   margin-top: 8px;
-  color: #666;
+
+  color: var(--muted);
 }
 
 #menu article strong {
   margin-top: 15px;
+
   margin-bottom: 20px;
+
   font-size: 1.1rem;
+
+  color: var(--primary);
 }
 
 /* =========================
-     WHY US
-  ========================= */
+   WHY US
+========================= */
 
 #why-us {
   background: #f7f7f7;
+
   text-align: center;
 }
 
 #why-us > div:last-child {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 25px;
 }
 
@@ -440,12 +498,14 @@ section > div:first-child p {
 }
 
 #why-us article p {
+  margin-top: 10px;
+
   color: var(--muted);
 }
 
 /* =========================
-     REVIEWS
-  ========================= */
+   REVIEWS
+========================= */
 
 #reviews {
   text-align: center;
@@ -457,16 +517,23 @@ section > div:first-child p {
 
 #reviews > div:last-child {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 25px;
 }
 
 #reviews article {
   padding: 35px;
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius);
+
   background: var(--surface);
+
   text-align: left;
+
   transition: var(--transition);
 }
 
@@ -487,46 +554,166 @@ section > div:first-child p {
 }
 
 /* =========================
-     CONTACT
-  ========================= */
+   CONTACT
+========================= */
 
 #contact {
-  background: #f7f7f7;
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+
+  gap: 60px;
+
+  background: #f7f1eb;
 }
 
-#contact > div {
-  max-width: 700px;
+.contact-content {
+  max-width: 550px;
 }
 
-#contact address {
+.contact-content > p {
+  color: var(--muted);
+}
+
+.contact-content address {
   margin-top: 25px;
+
   font-style: normal;
+
   line-height: 2;
+
+  color: var(--muted);
+}
+
+.contact-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.contact-buttons a {
+  margin: 0 !important;
+}
+
+/* Google Maps */
+
+.map-container {
+  overflow: hidden;
+
+  min-height: 400px;
+
+  border-radius: 20px;
+
+  box-shadow: var(--shadow);
+}
+
+.map-container iframe {
+  width: 100%;
+
+  height: 400px;
+
+  display: block;
+
+  border: 0;
 }
 
 /* =========================
-     FOOTER
-  ========================= */
+   FLOATING WHATSAPP
+========================= */
+
+.whatsapp-float {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  z-index: 2000;
+
+  padding: 13px 18px;
+
+  border-radius: 999px;
+
+  background: #25d366;
+
+  color: white;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   padding: 30px 8%;
+
   text-align: center;
+
   background: #222;
+
   color: white;
 }
 
 /* =========================
-     RESPONSIVE
-  ========================= */
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+#home > div:first-child {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+#home > div:last-child {
+  animation: fadeUp 0.8s ease 0.15s forwards;
+
+  opacity: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 768px) {
   section {
     padding: 60px 5%;
   }
 
+  /* Navbar */
+
   nav {
     min-height: 65px;
+
     padding: 0 5%;
+
     position: relative;
   }
 
@@ -534,22 +721,48 @@ footer {
     display: none;
   }
 
-
   nav ul {
     display: none;
   }
 
-  #home,
-  #about {
-    grid-template-columns: 1fr;
+  .menu-toggle {
+    display: block;
   }
+
+  nav ul.active {
+    display: flex;
+
+    position: absolute;
+
+    top: 65px;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    background: var(--background);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+  }
+
+  /* Hero */
 
   #home {
     min-height: auto;
 
     padding-top: 50px;
 
-    gap: 40px
+    grid-template-columns: 1fr;
+
+    gap: 40px;
   }
 
   #home h1 {
@@ -576,9 +789,19 @@ footer {
     top: -15px;
   }
 
+  /* About */
+
+  #about {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
   #about img {
     height: 350px;
   }
+
+  /* Menu / Why Us / Reviews */
 
   #menu > div:last-child,
   #why-us > div:last-child,
@@ -586,53 +809,28 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .menu-toggle {
-    display: block;
+  /* Contact */
+
+  #contact {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
   }
 
-  nav ul.active {
-    display: flex;
-
-    position: absolute;
-
-    top: 65px;
-    left: 0;
-
-    width: 100%;
-
-    padding: 25px;
-
-    flex-direction: column;
-    gap: 20px;
-
-    background: var(--background);
-
-    border-bottom: 1px solid var(--border);
-
-    box-shadow: var(--shadow);
-  }  
-}
-
-/* Animation */
-
-@keyframes fadeup {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
+  .map-container {
+    min-height: 300px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .map-container iframe {
+    height: 300px;
   }
-}
 
-#home > div:first-child {
-  animation: fadeUp 0.8s ease forwards;
-}
+  /* WhatsApp */
 
-#home > div:last-child {
-  animation: fadeUp 0.8s ease 0.15s forwards;
+  .whatsapp-float {
+    right: 15px;
+    bottom: 15px;
 
-  opacity: 0;
+    padding: 12px 16px;
+  }
 }
